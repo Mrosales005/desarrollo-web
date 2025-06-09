@@ -5,6 +5,10 @@ import Home from './Home';
 import Contact from './Contact';
 import TaskList from './components/TaskList';
 import UserForm from './UserForm';
+import UserDetails from './UserDetails';
+import UserEdit from './UserEdit';
+import UserDelete from './UserDelete';
+
 
 const App = () => {
   const [users, setUsers] = useState([]);
@@ -61,7 +65,14 @@ const App = () => {
             <TaskList />
           </div>
         } />
-        <Route path="/contact" element={<Contact />} />
+
+         <Route path="/contact" element={<Contact />} />
+  <Route path="/users/:id" element={<UserDetails />} />
+  <Route path="/edit/:id" element={<UserEdit />} />
+  <Route path="/delete/:id" element={<UserDelete />} />
+  <Route path="/tasks" element={<TaskList />} />
+
+
       </Routes>
     </Router>
   );
